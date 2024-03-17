@@ -1,21 +1,18 @@
 import Ball from "./classes/Ball.js";
 
 var canvas = document.getElementById('c');
-
 canvas.height = innerHeight;
 canvas.width = innerWidth;
-
 var c = canvas.getContext("2d");
-
-
 let keyMap = new Map();
 keyMap.set('KeyA', [-2, -5]);
 keyMap.set('KeyD', [2, -5]);
 
-const NRGLOSS = 0.1;
+
+
 const mainBall = new Ball(c, 95, 50, 10, 5, 5);
 
-var animate = () => { 
+var animate = () => {
     clearScreen();
     mainBall.render();
     mainBall.physUpdate();
@@ -47,8 +44,9 @@ document.addEventListener('keydown', (e)=>{
 
 
 document.addEventListener('mousedown', (e)=>{
-    if (e.x <= canvas.width/2) mainBall.setVel(-2, -5);
-    else mainBall.setVel(2,-5);
+    // if (e.x <= canvas.width/2) mainBall.setVel(-2, -5);
+    // else mainBall.setVel(2,-5);
+    
     e.preventDefault();
 });
 
